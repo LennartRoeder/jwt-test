@@ -1,0 +1,14 @@
+version: '2'
+services:
+  jwt-test:
+    build: .
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/go/src/jwt-test
+    environment:
+      - DEVELOPMENT=true
+  mongodb:
+    image: artifactory.mars.haw-hamburg.de:5000/mongo
+    ports:
+      - 27017:27017
